@@ -21,7 +21,7 @@ contract Deleverager is Ownable, IMorphoFlashLoanCallback {
 
     ILTV public immutable ltv;
 
-    constructor(address _ltv) Ownable(msg.sender) {
+    constructor(address _ltv, address initialOwner) Ownable(initialOwner) {
         ltv = ILTV(_ltv);
     }
 
