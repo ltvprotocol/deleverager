@@ -31,7 +31,7 @@ contract DeleveragerTest is Test {
         vm.createSelectFork(vm.envString("MAINNET_RPC_URL"));
 
         ltv = ILTVTest(LTV_VAULT);
-        deleverager = new Deleverager(address(ltv));
+        deleverager = new Deleverager(address(ltv), address(this));
 
         vm.prank(ltv.governor());
         ltv.setSoftLiquidationLtv(1, 1);
